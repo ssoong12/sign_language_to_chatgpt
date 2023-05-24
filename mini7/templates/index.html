@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>AIVLE 30</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--=============== FAVICON ===============-->
+    {% load static %}
+    <link
+      rel="shortcut icon"
+      href="{% static 'images/logo.png' %}"
+      type="image/x-icon"
+    />
+
+    <!--=============== REMIX ICONS ===============-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+
+    <!--=============== CSS ===============-->
+    {% load static %} {% block extrahead %}
+    <link rel="stylesheet" href="{% static 'gpt/common.css' %}" />
+    <link rel="stylesheet" href="{% static 'gpt/header.css' %}" />
+    <link rel="stylesheet" href="{% static 'gpt/footer.css' %}" />
+    <link rel="stylesheet" href="{% static 'index/css/index.css' %}">
+    {% endblock %}
+  </head>
+  <body>
+    <!--==================== HEADER ====================-->
+    {% include 'header.html' %}
+    <div class="container" style="margin-top: 3.5rem; height: 100vh">
+      <main class="contents">
+        <section class="wrap" style="text-align: center">
+            <div class="container">
+                <div>
+                    <img id="mouse" src="{% static 'index/images/computer.png'%}" style="width: 30px">
+                    <p style="margin-top:2px; margin-bottom: 50px;"> 마우스를 올려보세요. </p>
+                </div>
+                
+                <div class="slick-list draggable">
+                    <div class="slick-track" style="width: 1000px;">
+                        <div><button class="slick-prev" type="button"><img src={% static 'index/images/left-arrow-1.png' %}></button></div>
+                        <div class="item" style="width: 200px" tableindex="0" data-slick-index="0" aria-hidden="false">
+                            <div class="card">
+                                <strong class="alpha"></strong>
+                                <img src="{% static 'index/images/color/A.jpg' %}">
+                                <p class="card-num">A</p>
+                                
+                            </div>
+                        </div>
+                        <div class="item" style="width: 200px" tableindex="1" data-slick-index="0" aria-hidden="false">
+                            <div class="card">
+                                <strong class="alpha"></strong>
+                                <img src="{% static 'index/images/color/B.jpg' %}">
+                                <p class="card-num">B</p>
+                            </div>
+                        </div>
+                        <div class="item" style="width: 200px" tableindex="2" data-slick-index="0" aria-hidden="false">
+                            <div class="card">
+                                <strong class="alpha"></strong>
+                                <img src="{% static 'index/images/color/C.jpg' %}">
+                                <p class="card-num">C</p>
+                            </div>
+                        </div>
+                        <div class="item" style="width: 200px" tableindex="3" data-slick-index="0" aria-hidden="false">
+                            <div class="card">
+                                <strong class="alpha"></strong>
+                                <img src="{% static 'index/images/color/D.jpg' %}">
+                                <p class="card-num">D</p>
+                            </div>
+                        </div>
+                        <div><button class="slick-next"type="button"> <img src={% static 'index/images/right-arrow.png' %}> </button></div>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+    </main>
+      
+    </div>
+    <!--==================== FOOTER ====================-->
+    {% include 'footer.html' %}
+  </body>
+</html>
