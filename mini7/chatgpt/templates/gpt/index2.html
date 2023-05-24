@@ -1,0 +1,127 @@
+{% extends "gpt/gpt_menu.html" %} {% load static %} {% block extrahead %}
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<link rel="stylesheet" href="{% static 'yeon/style.css' %}" />
+<link rel="stylesheet" href="{% static 'yeon/common.css' %}" />
+<script>
+  let idNum = 0;
+  let check = false;
+  var fileArr = new Array(10);
+  function addFile() {
+    deepCopy();
+  }
+  function deleteFile() {
+    if (idNum == 0) {
+      alert("첫번째 파일 삭제 불가!");
+      return;
+    }
+    const del_element = document.querySelector("#file-module-" + idNum);
+    del_element.remove();
+    idNum--;
+  }
+
+  window.onload = function () {
+    $(".left-menu").removeClass("active");
+    $(".right-menu").addClass("active");
+  };
+
+  function deepCopy() {
+    // 'test' node 선택
+    const fileModule = document.getElementById("file-module-" + idNum);
+
+    // 노드 복사하기 (deep copy)
+    const newNode = fileModule.cloneNode(true);
+
+    console.log(newNode);
+
+    // 복사된 Node id 변경하기
+    idNum++;
+    newNode.id = "file-module-" + idNum;
+
+    // 복사한 노드 붙여넣기
+    fileModule.after(newNode);
+
+    //const button_file = document.querySelector("#file-module-"+idNum+" #cancel")
+    //button_file.value=idNum;
+  }
+
+  $(function () {
+    var obj = $("#dropzone");
+
+    obj.on("dragenter", function (e) {
+      e.stopPropagation();
+      e.preventDefault();
+      $(this).css("border", "2px solid #5272A0");
+    });
+
+    obj.on("dragleave", function (e) {
+      e.stopPropagation();
+      e.preventDefault();
+      $(this).css("border", "2px dotted #8296C2");
+    });
+
+    obj.on("dragover", function (e) {
+      e.stopPropagation();
+      e.preventDefault();
+    });
+
+    obj.on("drop", function (e) {
+      e.preventDefault();
+      $(this).css("border", "2px dotted #8296C2");
+
+      var files = e.originalEvent.dataTransfer.files;
+      //$("#drop_img").attr("src", files[0].name)
+
+      const file_module = document.querySelector(
+        "#file-module-" + idNum + " #input-file"
+      );
+
+      file_module.files = files;
+
+      console.log(files[0].name);
+
+      if (files.length < 1) return;
+    });
+  });
+</script>
+{% endblock %} {% block gpt_content %}
+<form action="/chatgpt/chat2" method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  <span>
+    <fieldset>
+      <legend><h1>파일 업로드</h1></legend>
+      <div id="dropzone">원하는 이미지를 Drag & Drop</div>
+      <br />
+
+      <div id="file-module-0">
+        <input id="input-file" name="files" type="file" multiple />
+      </div>
+
+      <button id="text-button" onclick="addFile()" type="button">
+        파일 추가
+      </button>
+      <button id="text-button" onclick="deleteFile()" type="button">
+        파일 삭제
+      </button>
+    </fieldset>
+  </span>
+  <p>sh branch test</p>
+  <p>jh branch test</p>
+  <p>jy branch test</p>
+  <p>sj branch test</p>
+  <p>yo branch test</p>
+  <br />
+  <details>
+    <summary>수어 이미지</summary>
+    <p>
+      <img src="{% static 'yeon/resources/a.png' %}" class="gpt-icon" />a
+      <img src="{% static 'yeon/resources/l.png' %}" class="gpt-icon" />l
+      <img src="{% static 'yeon/resources/o.png' %}" class="gpt-icon" />o
+      <img src="{% static 'yeon/resources/v.png' %}" class="gpt-icon" />v
+      <img src="{% static 'yeon/resources/e.png' %}" class="gpt-icon" />e
+    </p>
+  </details>
+  <br />
+  <input id="text-button" type="submit" value="ChatGPT에게 수어로 문의하기" />
+</form>
+
+{% endblock %}
