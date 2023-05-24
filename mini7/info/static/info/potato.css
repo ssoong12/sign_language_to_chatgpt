@@ -1,0 +1,70 @@
+:root{
+    --img_size: 20rem;
+}
+
+.picture-container {
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    justify-content: flex-start;
+    border: 3px double red;
+    margin: 20px;
+    padding: 20px;
+}
+
+.image-class {
+    width: var(--img_size); /* adjust as needed */
+    height: var(--img_size); /* maintain aspect ratio */
+    border: 5px solid black; /* fancy border */
+}
+
+.image-select-class {
+    width: var(--img_size); /* adjust as needed */
+    margin-top: 10px; /* space between image and select */
+}
+
+.description {
+    margin-left: 20px;
+    margin-top: 10px;
+    font-size: large;
+}
+
+#image_desc {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.potato {
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    justify-content: flex-start;
+    margin: 20px;
+    padding: 20px;
+}
+
+.inform-image {
+    width: auto; /* adjust as needed */
+    height: var(--img_size); /* maintain aspect ratio */
+}
+
+.inform-description {
+    align-items: center;
+    color: gray;
+}
+
+.inform-desc1 {
+    margin-left: 20px;
+    margin-top: 10px;
+    font-size: large;
+}
+
+.potato2 {
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    justify-content: flex-start;
+    margin: 20px;
+    padding: 20px;
+}

@@ -1,0 +1,71 @@
+
+
+.gpt-menu {
+    text-align: center;
+}
+
+fieldset {
+    border-color: #FEA1A1;
+}
+
+#dropzone
+{
+    border:2px dotted #3292A2;
+    width:90%;
+    height:50px;
+    color:#92AAB0;
+    text-align:center;
+    font-size:24px;
+    padding-top:12px;
+    margin-top:10px;
+}
+
+.left-menu {
+    display: inline-block;
+    border: 1px solid #FEA1A1;
+    margin: 10px;
+    width:40%;
+}
+
+.right-menu {
+    display: inline-block;
+    border: 1px solid #FEA1A1;
+    margin: 10px;
+    width:40%;
+}
+
+.gpt-icon {
+    width: 80px;
+    height: 80px;
+}
+
+.quest-input{
+    width:80%;
+    height: fit-content;
+} 
+
+.quest-div {
+    width: 100%;
+}
+
+.active {
+    background-color: #FEA1A1;
+}
+
+#text-button {
+    background-color: #F9FBE7;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 5px 5px 5px 5px;
+    border-color:#F9FBE7;
+}
+
+
+#result {
+    padding: 5px;
+    display: inline-block;
+    line-height: 1.15rem;
+    background-color: rgb(83, 83, 83);
+    color: white;
+    border: 1px solid black;
+}

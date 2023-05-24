@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>팀원 소개 페이지</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+    <link rel="icon" type="image/x-icon" href="{% static 'favicon.ico' %}">
+</head>
+<body>
+    <h1>팀원 소개</h1>
+    <ul class="profile-list">
+        
+        <!-- 첫째줄 프로필 : 4명(조장 프로필(고정) 포함) -->
+        <div class="profile-row">
+            {% for member in team_members %}
+                {% if member.name == '손경현' or forloop.counter <= 4 %}
+                    
+                    <div class="profile-container">
+                        <img class="profile-img" src="{% static 'team_photos/'|add:member.photo_filename|add:'.png' %}" alt="{{ member.name}}'s photo">
+                        <div class="info-container">
+                            <h3>{{ member.name }}</h3>
+                            <p>{{ member.email }}</p>
+                        </div>
+                    </div>
+
+                {% endif %}
+            {% endfor %}
+        </div>
+
+        <!-- 둘째줄 프로필 : 3명 -->
+        <div class="profile-row">
+            {% for member in team_members %}
+                {% if member.name != '손경현' and forloop.counter > 4 %}
+                    
+                    <div class="profile-container">
+                        <img class="profile-img" src="{% static 'team_photos/'|add:member.photo_filename|add:'.png' %}" alt="{{ member.name}}'s photo">
+                        <div class="info-container">
+                            <h3>{{ member.name }}</h3>
+                            <p>{{ member.email }}</p>
+                        </div>
+                    </div>
+
+                {% endif %}
+            {% endfor %}
+        </div>
+
+    </ul>
+</body>
+</html>
+
