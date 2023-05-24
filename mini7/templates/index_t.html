@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+    <head>
+        {% load static %}
+        <title>수어</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="{% static '/css/index.css' %}">
+    </head>
+    <body>
+        <main class="contents">
+            <section class="wrap" style="text-align: center">
+                <div class="container">
+                    <div>
+                        <img id="mouse" src="{% static 'index/images/computer.png'%}" style="width: 30px">
+                        <p style="margin-top:2px; margin-bottom: 50px;"> 마우스를 올려보세요. </p>
+                    </div>
+                    
+                    <div class="slick-list draggable">
+                        <div class="slick-track" style="width: 1000px;">
+                            <div><button class="slick-prev" type="button"><img src={% static 'index/images/left-arrow-1.png' %}></button></div>
+                            <div class="item" style="width: 200px" tableindex="0" data-slick-index="0" aria-hidden="false">
+                                <div class="card">
+                                    <strong class="alpha"></strong>
+                                    <img src="{% static 'index/images/color/A.jpg' %}">
+                                    <p class="card-num">A</p>
+                                    
+                                </div>
+                            </div>
+                            <div class="item" style="width: 200px" tableindex="1" data-slick-index="0" aria-hidden="false">
+                                <div class="card">
+                                    <strong class="alpha"></strong>
+                                    <img src="{% static 'index/images/color/B.jpg' %}">
+                                    <p class="card-num">B</p>
+                                </div>
+                            </div>
+                            <div class="item" style="width: 200px" tableindex="2" data-slick-index="0" aria-hidden="false">
+                                <div class="card">
+                                    <strong class="alpha"></strong>
+                                    <img src="{% static 'index/images/color/C.jpg' %}">
+                                    <p class="card-num">C</p>
+                                </div>
+                            </div>
+                            <div class="item" style="width: 200px" tableindex="3" data-slick-index="0" aria-hidden="false">
+                                <div class="card">
+                                    <strong class="alpha"></strong>
+                                    <img src="{% static 'index/images/color/D.jpg' %}">
+                                    <p class="card-num">D</p>
+                                </div>
+                            </div>
+                            <div><button class="slick-next"type="button"> <img src={% static 'index/images/right-arrow.png' %}> </button></div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </section>
+        </main>
+       
+
+
+
+    </body>

@@ -1,0 +1,24 @@
+{% extends 'gpt/gpt_menu.html' %}
+{% load static %}
+{% block extrahead %}
+<link rel="stylesheet" href="{% static 'yeon/style.css' %}">
+<link rel="stylesheet" href="{% static 'yeon/common.css' %}">
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script>
+    window.onload = function() {
+        $(".left-menu").addClass("active");
+        $(".right-menu").removeClass("active");
+    }
+</script>
+
+{% endblock %}
+
+{% block gpt_content %}
+<form action="chat" method="post" entype="application/x-www-form-urlencoded">
+    {% csrf_token %}
+    <div id="file-module-0" class="quest-div">
+        <input class="quest-input" type="text" id="question" name="question" placeholder="chatgpt에게 질문하기..."></textarea>
+        <button id="text-button" type="submit" >질문</button>
+    </div>
+</form>
+{% endblock %}

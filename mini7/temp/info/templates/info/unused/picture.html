@@ -1,0 +1,31 @@
+<h1>Test Page</hl>
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Select">
+</form>
+
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Picture View</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'info/styles.css' %}">
+</head>
+<body>
+    <div class="picture-container">
+        <img src="{{ picture.image.url }}" alt="{{ picture.title }}">
+        <div class="description">
+            <p>{{ picture.description }}</p>
+        </div>
+    </div>
+
+    {% comment %} <select id="picture-select">
+        {% for picture in pictures %}
+            <option value="{{ picture.id }}">{{ picture.title }}</option>
+        {% endfor %}
+    </select> {% endcomment %}
+
+</body>
+</html>
