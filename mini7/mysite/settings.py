@@ -42,7 +42,6 @@ INSTALLED_APPS = [
     'selfchatgpt',
     'info',
     'team_intro',
-    'chatgpt',
 ]
 
 MIDDLEWARE = [
