@@ -1,9 +1,12 @@
 from django.shortcuts import render
 import openai
+import config
 # Create your views here.
 
-openai.api_key = "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"
+openai.api_key = config.chat_gpt_key
 
+def quiz(request):
+    return render(request, 'gpt/quize.html')  
 
 #chatGPT에게 채팅 요청 API
 def chatGPT(prompt):
