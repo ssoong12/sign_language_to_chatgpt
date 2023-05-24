@@ -1,0 +1,14 @@
+{% load static %}
+{% block extrahead %}
+<link rel="stylesheet" href="{% static 'yeon/style.css' %}">
+<link rel="stylesheet" href="{% static 'yeon/common.css' %}">
+{% endblock %}
+
+<div class="gpt-menu">
+    <span class='left-menu' OnClick="location.href ='/chatgpt'" style="cursor:pointer;">질문하기</span>
+    <span class='right-menu' OnClick="location.href ='/chatgpt/signlanguagetochatgpt/'" style="cursor:pointer;">수어로 질문</span>
+</div>
+<br>
+
+{% block gpt_content %}
+{% endblock %}
