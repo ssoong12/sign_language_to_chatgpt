@@ -5,6 +5,8 @@ import config
 
 openai.api_key = config.chat_gpt_key
 
+def quiz(request):
+    return render(request, 'gpt/quize.html')  
 
 #chatGPT에게 채팅 요청 API
 def chatGPT(prompt):

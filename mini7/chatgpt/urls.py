@@ -8,4 +8,5 @@ urlpatterns = [
     path('chat', views.chat, name='chat'),
     path('chat2', views.chat2, name='chat2'),
     path('signlanguagetochatgpt/', views.index2, name='index2'),
+    path('quiz', views.quiz, name='quiz')
 ]
