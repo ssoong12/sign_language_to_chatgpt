@@ -7,7 +7,7 @@
     flex-direction: row;
     align-items: start;
     justify-content: flex-start;
-    border: 3px double red;
+    border: 3px double black;
     margin: 20px;
     padding: 20px;
 }
@@ -45,8 +45,8 @@
 }
 
 .inform-image {
-    width: auto; /* adjust as needed */
-    height: var(--img_size); /* maintain aspect ratio */
+    width: 600; /* adjust as needed */
+    height: auto; /* maintain aspect ratio */
 }
 
 .inform-description {
@@ -67,4 +67,12 @@
     justify-content: flex-start;
     margin: 20px;
     padding: 20px;
+}
+
+body {
+    margin: 20px
+}
+
+.title1 {
+    align-self: center;
 }
