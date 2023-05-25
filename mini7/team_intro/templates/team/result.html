@@ -19,6 +19,7 @@
                         <img class="profile-img" src="{% static 'team_photos/'|add:member.photo_filename|add:'.png' %}" alt="{{ member.name}}'s photo">
                         <div class="info-container">
                             <h3>{{ member.name }}</h3>
+                            <p>{{ member.role }}</p>
                             <p>{{ member.email }}</p>
                         </div>
                     </div>
@@ -36,6 +37,7 @@
                         <img class="profile-img" src="{% static 'team_photos/'|add:member.photo_filename|add:'.png' %}" alt="{{ member.name}}'s photo">
                         <div class="info-container">
                             <h3>{{ member.name }}</h3>
+                            <p>{{ member.role }}</p>
                             <p>{{ member.email }}</p>
                         </div>
                     </div>
