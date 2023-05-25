@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 mini7/mysite/__pycache__/
 mini7/chatgpt/__pycache__/
 mini7/chatgpt/migrations/
@@ -10,7 +9,4 @@ mini7/signlanguagetochatgpt/__pycache__/
 mini7/signlanguagetochatgpt/migrations/
 mini7/team_intro/__pycache__/
 mini7/team_intro/migrations/
-=======
-# api key
-mini7/chatgpt/config.py
->>>>>>> 4cd8045f4412a3d0cc772c990d32913b2b045e3a
+.gitignore
