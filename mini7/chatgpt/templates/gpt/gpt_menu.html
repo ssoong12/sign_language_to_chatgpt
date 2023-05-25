@@ -1,0 +1,45 @@
+<html>
+<head>
+    <title>AIVLE 30</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!--=============== FAVICON ===============-->
+{% load static %}
+<link
+    rel="shortcut icon"
+    href="{% static 'images/logo.png' %}"
+    type="image/x-icon"
+/>
+
+<!--=============== REMIX ICONS ===============-->
+<link
+    href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
+    rel="stylesheet"
+/>
+
+{% load static %}{% block extrahead %}
+<link rel="stylesheet" href="{% static 'yeon/style.css' %}" />
+<link rel="stylesheet" href="{% static 'gpt/common.css' %}" />
+<link rel="stylesheet" href="{% static 'gpt/header.css' %}" />
+<link rel="stylesheet" href="{% static 'gpt/footer.css' %}" />
+{% endblock %}
+</head>
+
+<body>
+{% include 'header.html' %}
+
+<div class="container" style="margin-top: 3.5rem; height: 100vh">
+<div class="gpt-menu">
+    <span class='left-menu' OnClick="location.href ='/chatgpt'" style="cursor:pointer;">질문하기</span>
+    <span class='right-menu' OnClick="location.href ='/chatgpt/signlanguagetochatgpt/'" style="cursor:pointer;">수어로 질문</span>
+</div>
+
+{% block gpt_content %}
+{% endblock %}
+</div>
+<br>
+
+{% include 'footer.html' %}
+</body>
+</html>

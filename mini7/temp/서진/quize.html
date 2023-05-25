@@ -1,0 +1,74 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/quize.css' %}">
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>수어 퀴즈</title>
+  </head>
+  <body>
+    <h1>수어 퀴즈</h1>
+    <div class='qpos' id="question"></div>
+    <div class='imagepos'>
+        <img id='image' src="" alt="이미지 실패">
+    </div>
+    <div class='btnpos'>
+        <button id='choice1' onclick="handleAnswer('안녕하세요')">안녕하세요</button>
+        <button id='choice2' onclick="handleAnswer('오전')">오전</button>
+        <button id='choice3' onclick="handleAnswer('오후')">오후</button>
+        <button id='choice4' onclick="handleAnswer('맛있다')">맛있다</button>
+    </div>
+
+    <script>
+      // 문제와 선택지를 정의합니다.
+      const questions = [
+        { question: "그림을 보고 수어의 뜻을 맞추세요", answer: "오전" },
+        { question: "그림을 보고 수어의 뜻을 맞추세요", answer: "맛있다" },
+        { question: "그림을 보고 수어의 뜻을 맞추세요", answer: "안녕하세요" },
+        { question: "그림을 보고 수어의 뜻을 맞추세요", answer: "오후" },
+        ];
+
+      const images = [
+        { image: "/static/imges/img1.PNG"},
+        { image: "/static/imges/img2.PNG"},
+        { image: "/static/imges/img3.PNG"},
+        { image: "/static/imges/img4.PNG"},
+        ];
+
+      let currentQuestionIndex = 0;
+      let answer=0;
+
+      function displayQuestion() {
+        const questionElement = document.getElementById("question");
+        questionElement.textContent = questions[currentQuestionIndex].question;
+
+        const imageElement = document.getElementById("image");
+        imageElement.src = images[currentQuestionIndex].image;
+
+      }
+
+      function handleAnswer(userAnswer) {
+        const correctAnswer = questions[currentQuestionIndex].answer;
+
+
+        if (userAnswer === correctAnswer) {
+            alert("정답입니다!");
+        } else {
+            alert("오답입니다!");
+        }
+
+        currentQuestionIndex++;
+
+        if (currentQuestionIndex < questions.length) {
+          displayQuestion();
+        } else {
+          alert("모든 문제를 푸셨습니다.");
+          // 퀴즈 종료 또는 다음 동작을 처리할 수 있습니다.
+        }
+      }
+
+      // 초기 문제를 표시합니다.
+      displayQuestion();
+    </script>
+  </body>
+</html>

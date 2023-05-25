@@ -1,0 +1,42 @@
+{% extends 'gpt/gpt_menu.html' %}
+{% load static %}
+{% block extrahead %}
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<link rel="stylesheet" href="{% static 'yeon/style.css' %}">
+<link rel="stylesheet" href="{% static 'yeon/common.css' %}">
+<script>
+    window.onload = function() {
+        if ("{{option}}"=="left"){
+            $(".left-menu").addClass("active");
+        }
+        else if ("{{option}}"=="right"){
+            $(".right-menu").addClass("active");
+        }
+    }
+        
+    
+</script>
+{% endblock %}
+
+{% block gpt_content %}
+    
+<form action="chat" method="post" entype="application/x-www-form-urlencoded">
+    {% csrf_token %}
+    <div id="file-module-0" class="quest-div">
+        <input class="quest-input" type="text" id="question" name="question" placeholder="chatgpt에게 질문하기..."></textarea>
+        <button id="text-button" type="submit" >질문</button>
+    </div>
+    <br>
+    <div id="chat1" align="right" class="mychat">
+        <span id="result">{{question}}</span>
+        <img class="gpt-icon" src="{% static 'yeon/resources/user.png' %}" alt="user-icon">
+    </div>
+    <br>
+    <div id="chat2">
+      <img class="gpt-icon" src="{% static 'yeon/resources/gpt_icon.png' %}" alt="gpt-icon">
+      <span id="result">{{result}}</span>
+    </div>
+</form>
+
+<div id="chat-content"></div>
+{% endblock %}
