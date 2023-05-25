@@ -1,25 +1,12 @@
 from django.shortcuts import render
-from .models import Picture
-from .forms import PictureForm
-
-def picture_view(request):
-    if request.method == 'POST':
-        form = PictureForm(request.POST)
-        if form.is_valid():
-            picture = form.cleaned_data['picture']
-    else:
-        form = PictureForm()
-        picture = Picture.objects.first()  # display the first picture by default
-    return render(request, 'info/picture.html', {'form': form, 'picture': picture})
-
 from django.conf import settings
 from django.http import JsonResponse
 from django.core.files.storage import get_storage_class
 import os
 
 def image_desc_list(request):
-    image_dir = os.path.join(settings.STATICFILES_DIRS[0], 'info/images')
-    desc_dir = os.path.join(settings.STATICFILES_DIRS[0], 'info/desc')
+    image_dir = os.path.join(settings.BASE_DIR, 'info/static/', 'info/images')
+    desc_dir = os.path.join(settings.BASE_DIR, 'info/static/', 'info/desc')
 
     image_files = sorted(os.listdir(image_dir))
 

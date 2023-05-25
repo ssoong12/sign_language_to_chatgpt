@@ -1,1 +1,1 @@
-chat_gpt_key = "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"
+chat_gpt_key = "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"

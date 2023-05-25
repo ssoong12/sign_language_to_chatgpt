@@ -2,11 +2,27 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <!--=============== FAVICON ===============-->
+    <link
+      rel="shortcut icon"
+      href="{% static 'images/logo.png' %}"
+      type="image/x-icon"
+    />
+
+    <!--=============== REMIX ICONS ===============-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
     <title>팀원 소개 페이지</title>
     <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'gpt/common.css' %}" />
+    <link rel="stylesheet" href="{% static 'gpt/header.css' %}" />
+    <link rel="stylesheet" href="{% static 'gpt/footer.css' %}" />
     <link rel="icon" type="image/x-icon" href="{% static 'favicon.ico' %}">
 </head>
 <body>
+{% include 'header.html' %} 
     <h1>팀원 소개</h1>
     <ul class="profile-list">
         
@@ -19,6 +35,7 @@
                         <img class="profile-img" src="{% static 'team_photos/'|add:member.photo_filename|add:'.png' %}" alt="{{ member.name}}'s photo">
                         <div class="info-container">
                             <h3>{{ member.name }}</h3>
+                            <p>{{ member.role }}</p>
                             <p>{{ member.email }}</p>
                         </div>
                     </div>
@@ -36,6 +53,7 @@
                         <img class="profile-img" src="{% static 'team_photos/'|add:member.photo_filename|add:'.png' %}" alt="{{ member.name}}'s photo">
                         <div class="info-container">
                             <h3>{{ member.name }}</h3>
+                            <p>{{ member.role }}</p>
                             <p>{{ member.email }}</p>
                         </div>
                     </div>
@@ -45,6 +63,7 @@
         </div>
 
     </ul>
+{% include 'footer.html' %}
 </body>
 </html>
 
