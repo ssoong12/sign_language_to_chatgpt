@@ -1,6 +1,7 @@
 
 
 .gpt-menu {
+    padding: 1rem;
     text-align: center;
 }
 
@@ -40,8 +41,9 @@ fieldset {
 }
 
 .quest-input{
-    width:80%;
+    width:90%;
     height: fit-content;
+    padding: 10px;
 } 
 
 .quest-div {
@@ -54,8 +56,7 @@ fieldset {
 
 #text-button {
     background-color: #F9FBE7;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding: 10px 20px 10px 20px;
     border-radius: 5px 5px 5px 5px;
     border-color:#F9FBE7;
 }
