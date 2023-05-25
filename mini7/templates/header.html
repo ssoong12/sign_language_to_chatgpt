@@ -1,13 +1,13 @@
 <header class="header" id="header">
   <nav class="nav container">
-    <a href="#" class="nav__logo">
+    <a href="/" class="nav__logo">
       <i class="ri-hand-heart-line nav__logo-icon"></i>AIVLE 30
     </a>
 
     <div class="nav__menu" id="nav-menu">
       <ul class="nav__list">
         <li class="nav__item">
-          <a href="" class="nav__link active-link">Home</a>
+          <a href="/" class="nav__link active-link">Home</a>
         </li>
         <li class="nav__item">
           <a href="/info/" class="nav__link">수어 소개</a>
@@ -17,9 +17,6 @@
         </li>
         <li class="nav__item">
           <a href="/chatgpt" class="nav__link">ChatGPT</a>
-        </li>
-        <li class="nav__item">
-          <a href="/chatgpt" class="nav__link">수어 ChatGPT</a>
         </li>
         <li class="nav__item">
           <a href="/team_intro" class="nav__link">팀원 소개</a>
@@ -89,4 +86,25 @@
     else scrollUp.classList.remove("show-scroll");
   }
   window.addEventListener("scroll", scrollUp);
+
+/*=============== SECTIONS ACTIVE LINK  ===============*/
+  // 현재 URL 경로를 가져오기
+  var currentPath = window.location.pathname;
+
+  // 네비게이션 메뉴 아이템을 선택
+  var navItems = document.querySelectorAll(".nav__item");
+
+  // 모든 네비게이션 메뉴 아이템에서 "active-link" 클래스를 제거
+  // 현재 경로와 일치하는 메뉴 아이템을 찾아 "active-link" 클래스를 추가
+  navItems.forEach(function (item) {
+    var link = item.querySelector(".nav__link");
+    var href = link.getAttribute("href");
+
+    if (currentPath === href) {
+      link.classList.add("active-link");
+    } else {
+      link.classList.remove("active-link");
+    }
+  });
+
 </script>

@@ -1,5 +1,6 @@
 
 div.qpos{
+    margin-top: 5rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -14,29 +15,35 @@ div.imagepos{
     text-align: center;
 }
 img{
+
     padding: 30px;
     background: white;
     display: table-cell;
 }
 
 div.btnpos{
+    
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
 }
 
-button{
+#choice1, #choice2, #choice3, #choice4{
     padding: 10px;
     margin: 20px;
 
     width: 150px;
     height: 50px;
 
-    border-color: yellow;
-    border-width: 4px;
+    border-width: 3px;
+    border-color: var(--first-color);
     background-color: white;
     
     border-style: solid;
-    border-radius: 20px 20px 20px 20px 
+    border-radius: 10px
+}
+#choice1:hover, #choice2:hover, #choice3:hover, #choice4:hover{
+    background-color: var(--first-color);
+    color:var(--body-color);
 }
