@@ -1,9 +1,9 @@
 from django.shortcuts import render
 import openai
-import config
+from .config import *
 # Create your views here.
 
-openai.api_key = config.chat_gpt_key
+openai.api_key = chat_gpt_key
 
 def quiz(request):
     return render(request, 'gpt/quize.html')  
