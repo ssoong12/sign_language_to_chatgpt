@@ -1,9 +1,13 @@
 from django.shortcuts import render
 import openai
+<<<<<<< HEAD
 from chatgpt import config
+=======
+from .config import *
+>>>>>>> a1432bd (Adit) config file syntax error)
 # Create your views here.
 
-openai.api_key = config.chat_gpt_key
+openai.api_key = chat_gpt_key
 
 def quiz(request):
     return render(request, 'gpt/quize.html')  
