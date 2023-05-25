@@ -42,7 +42,8 @@ fieldset {
 
 .quest-input{
     width:90%;
-    height: 24sp;
+    height: fit-content;
+    padding: 10px;
 } 
 
 .quest-div {
