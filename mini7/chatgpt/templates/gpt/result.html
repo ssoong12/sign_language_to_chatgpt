@@ -2,8 +2,10 @@
 {% load static %}
 {% block extrahead %}
 <script src="http://code.jquery.com/jquery-latest.js"></script>
-<link rel="stylesheet" href="{% static 'yeon/style.css' %}">
-<link rel="stylesheet" href="{% static 'yeon/common.css' %}">
+<link rel="stylesheet" href="{% static 'yeon/style.css' %}" />
+<link rel="stylesheet" href="{% static 'gpt/common.css' %}" />
+<link rel="stylesheet" href="{% static 'gpt/header.css' %}" />
+<link rel="stylesheet" href="{% static 'gpt/footer.css' %}" />
 <script>
     window.onload = function() {
         if ("{{option}}"=="left"){
