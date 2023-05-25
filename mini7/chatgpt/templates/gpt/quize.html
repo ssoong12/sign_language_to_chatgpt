@@ -1,12 +1,26 @@
-{% load static %}
-<link rel="stylesheet" href="{% static 'css/quize.css' %}">
+{% load static %}{% block extrahead %}
+
+{% endblock %}
 
 <!DOCTYPE html>
 <html>
   <head>
+    <!--=============== FAVICON ===============-->
+    <link
+      rel="shortcut icon"
+      href="{% static 'images/logo.png' %}"
+      type="image/x-icon"
+    />
+
     <title>수어 퀴즈</title>
+    <link rel="stylesheet" href="{% static 'css/quize.css' %}">
+    <link rel="stylesheet" href="{% static 'yeon/style.css' %}" />
+    <link rel="stylesheet" href="{% static 'gpt/common.css' %}" />
+    <link rel="stylesheet" href="{% static 'gpt/header.css' %}" />
+    <link rel="stylesheet" href="{% static 'gpt/footer.css' %}" />
   </head>
   <body>
+    {% include 'header.html' %} 
     <h1>수어 퀴즈</h1>
     <div class='qpos' id="question"></div>
     <div class='imagepos'>
@@ -29,14 +43,13 @@
         ];
 
       const images = [
-        { image: "/static/imges/img1.PNG"},
-        { image: "/static/imges/img2.PNG"},
-        { image: "/static/imges/img3.PNG"},
-        { image: "/static/imges/img4.PNG"},
+        { image: "/static/images/img1.PNG"},
+        { image: "/static/images/img2.PNG"},
+        { image: "/static/images/img3.PNG"},
+        { image: "/static/images/img4.PNG"},
         ];
 
       let currentQuestionIndex = 0;
-      let answer=0;
 
       function displayQuestion() {
         const questionElement = document.getElementById("question");
@@ -70,5 +83,6 @@
       // 초기 문제를 표시합니다.
       displayQuestion();
     </script>
+  {% include 'footer.html' %}
   </body>
 </html>
